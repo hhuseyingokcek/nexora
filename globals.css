@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #0D0D0D;
+    --bg-card: #141414;
+    --bg-card-hover: #1A1A1A;
+    --primary-red: #B3001B;
+    --secondary-red: #7A0012;
+    --accent-gold: #D4AF37;
+    --accent-gold-light: #F3E5AB;
+    --text-primary: #F8F9FA;
+    --text-muted: #9CA3AF;
+    --border-color: #262626;
+  }
+
+  body {
+    background-color: #0D0D0D;
+    color: #F8F9FA;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    selection-background-color: #B3001B;
+    selection-color: #FFFFFF;
+  }
+
+  ::selection {
+    background-color: #B3001B;
+    color: #ffffff;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0D0D0D;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a1114;
+  border-radius: 4px;
+  border: 1px solid #7A0012;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B3001B;
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(20, 20, 20, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-red {
+  background: linear-gradient(135deg, rgba(179, 0, 27, 0.15) 0%, rgba(13, 13, 13, 0.8) 100%);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(179, 0, 27, 0.3);
+}
+
+.glass-gold {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(13, 13, 13, 0.8) 100%);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+/* Glow effects */
+.glow-red {
+  box-shadow: 0 0 30px -5px rgba(179, 0, 27, 0.35);
+}
+
+.glow-red-lg {
+  box-shadow: 0 0 50px 0px rgba(179, 0, 27, 0.4);
+}
+
+.glow-gold {
+  box-shadow: 0 0 25px -5px rgba(212, 175, 55, 0.3);
+}
+
+/* Red-black gradients */
+.gradient-red-dark {
+  background: linear-gradient(180deg, #1B0205 0%, #0D0D0D 100%);
+}
+
+.gradient-radial-red {
+  background: radial-gradient(circle at 50% 0%, rgba(179, 0, 27, 0.22) 0%, transparent 70%);
+}
+
+.gradient-text-gold {
+  background: linear-gradient(135deg, #FFF1BD 0%, #D4AF37 50%, #997B20 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-red {
+  background: linear-gradient(135deg, #FF6B7D 0%, #B3001B 60%, #7A0012 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Print styles for invoices */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}
